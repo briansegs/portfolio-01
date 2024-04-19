@@ -1,3 +1,5 @@
+import React from 'react';
+import { StyleSheetManager } from 'styled-components';
 import Acomplishments from '../components/Acomplishments/Acomplishments';
 import BgAnimation from '../components/BackgrooundAnimation/BackgroundAnimation';
 import Hero from '../components/Hero/Hero';
@@ -9,16 +11,20 @@ import { Section } from '../styles/GlobalComponents';
 
 const Home = () => {
   return (
-    <Layout>
-      <Section grid>
-        <Hero />
-        <BgAnimation />
-      </Section>
-      <Projects />
-      <Technologies />
-      <Timeline />
-      <Acomplishments />
-    </Layout>
+    <React.StrictMode>
+      <StyleSheetManager shouldForwardProp={() => true}>
+        <Layout>
+          <Section grid="true">
+            <Hero />
+            <BgAnimation />
+          </Section>
+          <Projects />
+          <Technologies />
+          <Timeline />
+          <Acomplishments />
+        </Layout>
+      </StyleSheetManager>
+    </React.StrictMode>
   );
 };
 
